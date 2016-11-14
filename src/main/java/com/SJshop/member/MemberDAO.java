@@ -27,7 +27,7 @@ public class MemberDAO {
 			new SqlSessionFactoryBuilder().build(
 					sqlReader);
 	
-	public static Member selectMember(String mNum) throws Exception {
+	public static Member selectMember(int mNum) throws Exception {
 		
 		Member member= null;
 		//1.sql 쿼리를 실행하는 SqlSession 객체 생성해서 변수에 저장
@@ -65,9 +65,9 @@ public class MemberDAO {
 
 	}//end method
 	
-	public static void deleteMember(Member member) throws Exception{
+	public static void deleteMember(int mNum) throws Exception{
 		SqlSession sqlSession = sqlMapper.openSession(true);
-		sqlSession.insert("deleteMember",member);
+		sqlSession.insert("deleteMember",mNum);
 		sqlSession.close();
 	}
 

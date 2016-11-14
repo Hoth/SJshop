@@ -37,7 +37,7 @@ public class GoodDAO {
 		 * Good 객체를 리턴
 		 * 매개변수:gnum 조회하려는 물건 번호
 		 */
-		public static Good selectGood(String gNum) throws Exception {
+		public static Good selectGood(int gNum) throws Exception {
 			
 			Good good = null;
 			//1.sql 쿼리를 실행하는 SqlSession 객체 생성해서 변수에 저장

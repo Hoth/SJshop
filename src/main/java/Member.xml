@@ -16,28 +16,27 @@
 
 	<select id="selectMemberList" resultMap="MemberResultMap">
 	 <![CDATA[
-	  	select Mnum,name,Email,phone from tb_member
+	  	select Mnum,name,Email,phone from shop_Member
 	 ]]>
 	</select>
 
 	
 	<select id="selectMember" resultMap="MemberResultMap">
 	<![CDATA[
-		select Mnum,name,Email,phone from tb_member
+		select Mnum,name,Email,phone from shop_Member
 		where Mnum=#{Mnum}
 	]]>
 	</select>
 	
 	<insert id="insertMember" parameterType="Member">
 	<![CDATA[
-		insert into tb_member (Mnum,name,Email,phone)
+		insert into shop_Member (Mnum,name,Email,phone)
 		values (good_seq.nextval,#{name},#{Email},#{phone})  
 	]]>
 	</insert>
 	<insert id="deleteMember" parameterType="Member">
 	<![CDATA[
-		delete from tb_member (Mnum,name,Email,phone)
-		where Mnum=#{Mnum}  
+		delete from shop_Member where Mnum=#{Mnum}  
 	]]>
 	</insert>
 	
