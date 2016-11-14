@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+		
+<configuration>
+<!-- 입력할때 null 허용여부 :jdbcTypeForNull
+       VARCHAR ->null이 입력되면 ''로 바꿔서 입력하겠다.
+   -->
+<settings>
+  <setting name="jdbcTypeForNull" value="VARCHAR"/>
+</settings>
+<typeAliases>
+     <typeAlias alias="Good" type="com.SJshop.good.Good"/>
+     <typeAlias alias="Member" type="com.SJshop.member.Member"/>
+</typeAliases>
+<!-- 환경설정:
+      developement->개발중,XML 내용바꾸면 바로 바뀐내용적용
+      deploy->사이트 운영중,XML바꿔도 서버를 재시작해야만 바뀐내용적용
+     -->
+	<environments default="development">
+		<environment id="development">
+			
+	<transactionManager type="JDBC"/>
+	<dataSource type="POOLED">
+		<property name="driver"
+			value="com.mysql.jdbc.Driver" />
+		<property name="url"
+				value="jdbc:mysql://183.111.100.173/feelk22" /><!-- ?useUnicod=true&characterEncoding=UTF-8  추가해야 할지도-->
+		<property name="username"
+					value="feelk22" />
+		<property name="password"
+			value="ghtmsla233" />
+	</dataSource>
+
+</environment>
+</environments>
+<mappers>
+<!-- SQL쿼리가 있는 XML 문서의 이름 -->
+	<mapper resource="Good.xml" />
+	<mapper resource="Member.xml" />
+	
+</mappers>
+</configuration>

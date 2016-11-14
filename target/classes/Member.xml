@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="Member">	
+
+	<resultMap type="Good" id="MemberResultMap">
+	
+		<result column="Mnum" property="Mnum"/>
+		<result column="name" property="name"/>
+		<result column="Email" property="Email"/>
+		<result column="phone" property="phone"/>
+		
+	</resultMap>
+
+	<select id="selectMemberList" resultMap="MemberResultMap">
+	 <![CDATA[
+	  	select Mnum,name,Email,phone from tb_member
+	 ]]>
+	</select>
+
+	
+	<select id="selectMember" resultMap="MemberResultMap">
+	<![CDATA[
+		select Mnum,name,Email,phone from tb_member
+		where Mnum=#{Mnum}
+	]]>
+	</select>
+	
+	<insert id="insertMember" parameterType="Member">
+	<![CDATA[
+		insert into tb_member (Mnum,name,Email,phone)
+		values (good_seq.nextval,#{name},#{Email},#{phone})  
+	]]>
+	</insert>
+	
+</mapper>
