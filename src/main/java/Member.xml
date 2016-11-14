@@ -34,5 +34,11 @@
 		values (good_seq.nextval,#{name},#{Email},#{phone})  
 	]]>
 	</insert>
+	<insert id="deleteMember" parameterType="Member">
+	<![CDATA[
+		delete from tb_member (Mnum,name,Email,phone)
+		where Mnum=#{Mnum}  
+	]]>
+	</insert>
 	
 </mapper>

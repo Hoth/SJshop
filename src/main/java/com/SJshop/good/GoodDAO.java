@@ -16,8 +16,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 public class GoodDAO {
 	
-	private  static String resource=
-			  "sqlmap-config.xml";
+	private  static String resource= "sqlmap-config.xml";
 	private static Reader sqlReader=null;
 	static{
 		try {
@@ -38,7 +37,7 @@ public class GoodDAO {
 		 * Good 객체를 리턴
 		 * 매개변수:gnum 조회하려는 물건 번호
 		 */
-		public static Good selectGood(String gnum) throws Exception {
+		public static Good selectGood(String gNum) throws Exception {
 			
 			Good good = null;
 			//1.sql 쿼리를 실행하는 SqlSession 객체 생성해서 변수에 저장
@@ -49,7 +48,7 @@ public class GoodDAO {
 			// (ArrayList)1변수.selectList("selectGood",gnum)
 			
 			ArrayList<Good>goodList =
-					(ArrayList) sqlSession.selectList("selectGood", gnum);
+					(ArrayList) sqlSession.selectList("selectGood", gNum);
 			//3. 2의 변수가 null 이 아니고 2변수.size()가 0초과면
 			if(goodList!=null&&goodList.size()>0){
 			// 3.1 2변수의 index 0에 해당하는 객체를 변수 good에 저장

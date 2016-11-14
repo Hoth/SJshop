@@ -39,6 +39,6 @@
 <!-- SQL쿼리가 있는 XML 문서의 이름 -->
 	<mapper resource="Good.xml" />
 	<mapper resource="Member.xml" />
-	
+	<mapper resource="ShoppingList.xml"/>
 </mappers>
 </configuration>
