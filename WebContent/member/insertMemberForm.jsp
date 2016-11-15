@@ -13,19 +13,18 @@
 	<table>
 	<tr><td>이름</td><td><input type="text" name="studno"/></td></tr>
 	<tr><td>ID</td><td><input type="text"  name="name"/></td></tr>
-	<tr><td>PW<input type="text"  name="grade"/></td></tr>
-	<tr><td>PW재입력<input type="text"  name="grade"/></td></tr>
-	<tr><td>비밀번호 질문<input type=""  name="grade"/></td></tr>
-	<tr><td>답변<input type="text"  name="grade"/></td></tr>
-	<tr><td>연락처<input type="text"  name="grade"/></td></tr>
-	<tr><td>주소<input type="text"  name="grade"/></td></tr>
-	
-	학과
-	<select name="deptno">
+	<tr><td>PW</td><td><input type="text"  name="grade"/></td></tr>
+	<tr><td>PW재입력</td><td><input type="text"  name="grade"/></td></tr>
+	<tr><td>비밀번호 질문</td><td>	<select name="deptno">
 		<c:forEach items="${DEPT_LIST}" var="DEPT">
 			<option value="${DEPT.deptno}">${DEPT.dname}</option>
 		</c:forEach>
-	</select>
+	</select></td></tr>
+	<tr><td>답변</td><td><input type="text"  name="grade"/></td></tr>
+	<tr><td>연락처</td><td><input type="text"  name="grade"/></td></tr>
+	<tr><td>주소</td><td><input type="text"  name="grade"/></td></tr>
+
+
 	<br/>
 	<input type="submit"  value="학생추가"/>
 	</form>	
