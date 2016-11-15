@@ -46,9 +46,11 @@
 	]]>
 	</delete>
 	
-	<update id="editMember" parameterType="int">
+	<update id="updateMember" parameterType="int">
 	<![CDATA[
-		 from shop_Member where mNum=#{mNum}  
+		 update shop_Member set mName=#{mName},
+		 mPw=#{mPw},mPhone=#{mPhone},mEmail=#{mEmail},mAddress=#{mAddress}
+		  where mNum=#{mNum}  
 	]]>
 	</update>
 </mapper>

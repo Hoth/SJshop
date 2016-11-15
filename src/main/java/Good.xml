@@ -43,4 +43,19 @@
 	]]>
 	</insert>
 	
+	<delete id="deleteGood" parameterType="int">
+	<![CDATA[
+		delete from shop_Good where gNum=#{gNum}  
+	]]>
+	</delete>
+	
+	<update id="updateGood" parameterType="int">
+	<![CDATA[
+		 update shop_Good set gName=#{gName},
+		 gPrice=#{gPrice},gMainImg=#{gMainImg},gMainDetail=#{gMainDetail},
+		 gImg=#{gImg},gDetail=#{gDetail},gStock=#{gStock}
+		 where mNum=#{mNum}  
+	]]>
+	</update>
+	
 </mapper>
