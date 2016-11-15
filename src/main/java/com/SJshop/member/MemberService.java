@@ -2,12 +2,10 @@ package com.SJshop.member;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.SJshop.member.Member;
-import com.SJshop.member.MemberDAO;
-
+@Controller
 public class MemberService {
 	@RequestMapping(value="/viewMemberList.do")
 	public ModelAndView viewMemberListList() throws Exception {

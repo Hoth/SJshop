@@ -6,11 +6,19 @@ public class Member {
 	public String mId;
 	public String mPw;
 	public String mPw2;
+	public String mPhone;
+	public String mEmail;
+	
 	public String mAddress;
 	public String mMileage;
-	public String sCount; //구매내역 보기 위한 구매횟수
+	public String mCount; //구매내역 보기 위한 구매횟수
 	
-
+	public String getmEmail() {
+		return mEmail;
+	}
+	public void setmEmail(String mEmail) {
+		this.mEmail = mEmail;
+	}
 	public int getmNum() {
 		return mNum;
 	}
@@ -41,6 +49,12 @@ public class Member {
 	public void setmPw2(String mPw2) {
 		this.mPw2 = mPw2;
 	}
+	public String getmPhone() {
+		return mPhone;
+	}
+	public void setmPhone(String mPhone) {
+		this.mPhone = mPhone;
+	}
 	public String getmAddress() {
 		return mAddress;
 	}
@@ -53,10 +67,10 @@ public class Member {
 	public void setmMileage(String mMileage) {
 		this.mMileage = mMileage;
 	}
-	public String getsCount() {
-		return sCount;
+	public String getmCount() {
+		return mCount;
 	}
-	public void setsCount(String sCount) {
-		this.sCount = sCount;
+	public void setmCount(String mCount) {
+		this.mCount = mCount;
 	}
 }

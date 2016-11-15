@@ -21,10 +21,10 @@ response.setHeader("cache-control","no-cache");
 			<c:forEach items="${Member_LIST}"
 			   var="Member">
 			   <li>
-			   	  <a href="viewGood.do?gnum=${Member.mNum}">
+			   	  <a href="viewMember.do?gnum=${Member.mNum}">
 					
 					<!-- /home/hosting_users/feelk22/photo -->
-					${Member.gName} = 맴버이름
+					${Member.mName} = 맴버이름
 			   	  </a>
 			   	</li>  	 
 			</c:forEach>

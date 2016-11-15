@@ -5,9 +5,9 @@
 		
 <mapper namespace="Member">	
 
-	<resultMap type="Good" id="MemberResultMap">
+	<resultMap type="Member" id="MemberResultMap">
 	
-		<result column="mNum" property="Mnum"/>
+		<result column="mNum" property="mNum"/>
 		<result column="mName" property="mName"/>
 		<result column="mId" property="mId"/>
 		<result column="mPw" property="mPw"/>
@@ -29,7 +29,7 @@
 	<select id="selectMember" resultMap="MemberResultMap">
 	<![CDATA[
 		select mNum,mName,mId,mPw,mPhone,mEmail,mAddress,mMileage,mCount from shop_Member
-		where Mnum=#{Mnum}
+		where mNum=#{mNum}
 	]]>
 	</select>
 	
