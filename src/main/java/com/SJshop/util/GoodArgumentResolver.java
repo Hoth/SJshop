@@ -17,17 +17,27 @@ public class GoodArgumentResolver
 			MethodParameter parameter,
 			NativeWebRequest request) throws Exception {
 		if(Good.class == parameter.getParameterType()){
+			String gNum = request.getParameter("gNum");
+			String gName = request.getParameter("gName");//��ǰ��
+			String gPrice = request.getParameter("gPrice");//����
+			String gMainImg = request.getParameter("gMainImg");//��ǥ����
+			String gMainDetail = request.getParameter("gMainDetail");//��ǥ����
+			String gImg = request.getParameter("gImg");//���λ���
+			String gDetail = request.getParameter("gDetail");//���μ���
+			int gCount = Integer.parseInt(request.getParameter("gCount"));//�Ǹŷ�
+			int gStock = Integer.parseInt(request.getParameter("gStock"));//���
 			
-			String gName = request.getParameter("gName");
-			String gDetail = request.getParameter("gDetail");
-			String gPrice = request.getParameter("gPrice");
-			String gImg = request.getParameter("gImg");
 			
 			Good g = new Good();
-			
+			g.setgNum(Integer.parseInt(gNum));
 			g.setgName(gName);
-			g.setgDetail(gDetail);
 			g.setgPrice(gPrice);
+			g.setgMainImg(gMainImg);
+			g.setgMainDetail(gMainDetail);
+			g.setgImg(gImg);
+			g.setgDetail(gDetail);
+			g.setgCount(gCount);
+			g.setgStock(gStock);
 			return g;
 		
 		

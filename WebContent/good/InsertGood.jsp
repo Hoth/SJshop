@@ -16,11 +16,12 @@
 	
 <form name="upload" method="post"  action="/www/AddGood.do" onSubmit="return submitContents(this)" enctype="multipart/form-data" > 
 
-제목 : <input type="text" name="name"><br>
-가격 : <input type="text" name="price">원.<br>
+제목 : <input type="text" name="gName"><br>
+가격 : <input type="text" name="gPrice">원.<br>
 대표파일 : <input type="file" name="file"><br>
+대표설명 : <input type="text" name="gMainDetail"><br>
 	<!-- Smart Editor -->
-<textarea style="width: 100%" rows="50" name="detail" id="textAreaContent" cols="80"></textarea>
+<textarea style="width: 100%" rows="50" name="gDetail" id="textAreaContent" cols="80"></textarea>
 
  <input type="submit" value="올리기" ><br>
  </form>

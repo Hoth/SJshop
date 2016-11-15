@@ -75,10 +75,10 @@ public class GoodService  {
 	@RequestMapping(value="/AddGood.do")
 	public ModelAndView AddGood(Good g,@RequestParam(value="file") MultipartFile file) throws Exception {
 		ModelAndView mav=new ModelAndView();
-		 String uploadPath = "D:/workspace3/www/WebContent/photo";
+		 String uploadPath = "C:/Users/bit-user/git/SJshop/WebContent/photo";
 		//       /home/hosting_users/feelk22/photo
-
-		
+//D:/workspace3/www/WebContent/photo
+		//C:\Users\bit-user\git\SJshop\WebContent\photo
 		File destFile=new File(uploadPath+"/"+file.getOriginalFilename());
 		
 		file.transferTo(destFile); 

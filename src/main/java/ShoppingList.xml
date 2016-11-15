@@ -30,8 +30,8 @@
 		where gNum=#{gNum}
 	]]>
 	</select>
-	
-	<insert id="insertGood" parameterType="Good">
+	<!-- 
+	<insert id="insertShoppingList" parameterType="Good">
 	<![CDATA[
 		insert into shop_Good (gNum,gName,gPrice,gMainImage,gMainDetail,
 	  	gImg,gDetail,gStock)
@@ -39,5 +39,6 @@
 	  	#{gImg},#{gDetail},#{gStock})  
 	]]>
 	</insert>
+	 -->
 	
 </mapper>

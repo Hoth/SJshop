@@ -13,6 +13,7 @@
 <typeAliases>
      <typeAlias alias="Good" type="com.SJshop.good.Good"/>
      <typeAlias alias="Member" type="com.SJshop.member.Member"/>
+     <typeAlias alias="ShoppingList" type="com.SJshop.shoppingList.ShoppingList"/>
 </typeAliases>
 <!-- 환경설정:
       developement->개발중,XML 내용바꾸면 바로 바뀐내용적용

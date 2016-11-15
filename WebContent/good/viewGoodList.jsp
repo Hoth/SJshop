@@ -21,10 +21,10 @@ response.setHeader("cache-control","no-cache");
 			<c:forEach items="${GOOD_LIST}"
 			   var="GOOD">
 			   <li>
-			   	  <a href="viewGood.do?gnum=${GOOD.gnum}">
-					<img src="photo/${GOOD.img}"/>
+			   	  <a href="viewGood.do?gnum=${GOOD.gNum}">
+					<img src="photo/${GOOD.gMainImg}"/>
 					<!-- /home/hosting_users/feelk22/photo -->
-					${GOOD.name}
+					${GOOD.gName}
 			   	  </a>
 			   	</li>  	 
 			</c:forEach>

@@ -7,9 +7,10 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%
 
-String path = "/home/hosting_users/feelk22/photo"; // 이미지가 저장될 주소
+String path = "C:/Users/bit-user/git/SJshop/WebContent/photo"; // 이미지가 저장될 주소
 //D:/workspace3/www/WebContent/photo
-//
+///home/hosting_users/feelk22/photo
+//C:\Users\bit-user\git\SJshop\WebContent\photo
 String filename = "";
 /*
 path는 스마트에디터로 이미지를 첨부했을 시에 업로드 될 경로다.

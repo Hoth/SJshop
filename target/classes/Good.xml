@@ -3,7 +3,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 		
-<mapper namespace="Good">	
+<mapper namespace="Good">
 
 	<resultMap type="Good" id="GoodResultMap">
 	
@@ -21,7 +21,7 @@
 
 	<select id="selectGoodList" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
 	  	gImg,gDetail,gCount,gStock from shop_Good
 	 ]]>
 	</select>
@@ -29,7 +29,7 @@
 	
 	<select id="selectGood" resultMap="GoodResultMap">
 	<![CDATA[
-		select gNum,gName,gPrice,gMainImage,gMainDetail,
+		select gNum,gName,gPrice,gMainImg,gMainDetail,
 	  	gImg,gDetail,gCount,gStock from shop_Good
 		where gNum=#{gNum}
 	]]>
@@ -37,10 +37,9 @@
 	
 	<insert id="insertGood" parameterType="Good">
 	<![CDATA[
-		insert into shop_Good (gNum,gName,gPrice,gMainImage,gMainDetail,
+		insert into shop_Good (gName,gPrice,gMainImg,gMainDetail,
 	  	gImg,gDetail,gStock)
-		values (#{gNum},#{gName},#{gPrice},#{gMainImage},#{gMainDetail},
-	  	#{gImg},#{gDetail},#{gStock})  
+		values (#{gName},#{gPrice},#{gMainImg},#{gMainDetail},#{gImg},#{gDetail},#{gStock})  
 	]]>
 	</insert>
 	

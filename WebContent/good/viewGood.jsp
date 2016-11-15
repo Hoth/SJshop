@@ -26,7 +26,7 @@ response.setHeader("cache-control","no-cache");
 					<tr>
 						<td style="padding-right: 5px">
 						
-							<img src="photo/${GOOD.img}"/>
+							<img src="photo/${GOOD.gMainImg}"/>
 						
 						
 						</td>
@@ -36,7 +36,7 @@ response.setHeader("cache-control","no-cache");
 									<td style="padding: 5px">물건정보 : </td>
 									<td>
 									
-									${GOOD.detail}
+									${GOOD.gDetail}
 									
 									</td>
 								</tr>
@@ -45,7 +45,7 @@ response.setHeader("cache-control","no-cache");
 									<td style="padding: 5px">상품가 : </td>
 									<td>
 									
-									${GOOD.price}
+									${GOOD.gPrice}
 									</td>
 								</tr>
 								<tr>
@@ -54,10 +54,10 @@ response.setHeader("cache-control","no-cache");
 								
 								<form action="addCart.do"  method="post">
 								<input type="hidden"  name="method"  value="addCart"/>
-    							<input type="hidden"  name="gnum"  value="${GOOD.gnum}"/>
-								<input type="hidden"  name="name"  value="${GOOD.name}"/>
-								<input type="hidden" name="price" value="${GOOD.price}"/>
-								<input type="hidden" name="img" value="${GOOD.img}"/>
+    							<input type="hidden"  name="gnum"  value="${GOOD.gNum}"/>
+								<input type="hidden"  name="name"  value="${GOOD.gName}"/>
+								<input type="hidden" name="price" value="${GOOD.gPrice}"/>
+								<input type="hidden" name="img" value="${GOOD.gImg}"/>
   								<!-- 장바구니에 담을 물건의 개수 입력 -->
   								<input type="text" name="qty"  value="1"/>
  								<!-- 장바구니 추가 버튼 -->
