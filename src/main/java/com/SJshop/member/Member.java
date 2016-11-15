@@ -8,7 +8,6 @@ public class Member {
 	public String mPw2;
 	public String mPhone;
 	public String mEmail;
-	
 	public String mAddress;
 	public String mMileage;
 	public String mCount; //구매내역 보기 위한 구매횟수

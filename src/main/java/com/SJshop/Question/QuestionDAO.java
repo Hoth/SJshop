@@ -32,10 +32,7 @@ public class QuestionDAO {
 		Question Question= null;
 		SqlSession sqlSession = sqlMapper.openSession(true);	
 		ArrayList<Question> QuestionList =
-				(ArrayList) sqlSession.selectList("selectQuestion", qNum);
-		if(QuestionList!=null&&QuestionList.size()>0){
-		Question=QuestionList.get(0);
-		}
+				(ArrayList) sqlSession.selectList("selectQuestion");
 		sqlSession.close();
 
 		return Question;

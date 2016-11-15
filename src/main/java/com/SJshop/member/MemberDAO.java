@@ -16,10 +16,8 @@ public class MemberDAO {
 	private static Reader sqlReader=null;
 	static{
 		try {
-			sqlReader=Resources.getResourceAsReader(
-								resource);
+			sqlReader=Resources.getResourceAsReader(resource);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}				
@@ -37,7 +35,6 @@ public class MemberDAO {
 		member=memList.get(0);
 		}
 		sqlSession.close();
-
 		return member;
   }
 	
@@ -53,7 +50,6 @@ public class MemberDAO {
 		SqlSession sqlSession = sqlMapper.openSession(true);
 		sqlSession.insert("insertMember", member);
 		sqlSession.close();
-
 	}
 	
 	public static void deleteMember(int mNum) throws Exception{
@@ -62,12 +58,10 @@ public class MemberDAO {
 		sqlSession.close();
 	}
 	
-
 	public static void updateMember(Member member) {
 		SqlSession sqlSession = sqlMapper.openSession(true);
 		sqlSession.insert("updateMember",member.mNum);
 		sqlSession.close();
-		
 	}
 
 }

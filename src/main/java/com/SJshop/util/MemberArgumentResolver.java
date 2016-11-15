@@ -19,19 +19,15 @@ import com.SJshop.member.*;
 				String mPw = request.getParameter("mPw");
 				String mAddress = request.getParameter("mAddress");
 				String mMileage = request.getParameter("mMileage");
-				String sCount = request.getParameter("sCount");
+				String mCount = request.getParameter("mCount");
 				Member m = new Member();
 				m.setmName(mName);
 				m.setmId(mId);
 				m.setmPw(mPw);
 				m.setmAddress(mAddress);
 				m.setmMileage(mMileage);
-				m.setsCount(sCount);
-			
-				
+				m.setmCount(mCount);
 				return m;
-			
-			
 			}
 			return WebArgumentResolver.UNRESOLVED;
 		}

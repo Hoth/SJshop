@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
- top <a href="/www/InsertMemberForm.do" target="main">회원가입</a>
+ top <a href="/www/insertMemberForm.do" target="main">회원가입</a>
    <a href="/www/LoginForm.do" target="main">로그인</a>
 </body>
 </html>
