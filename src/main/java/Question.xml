@@ -21,3 +21,4 @@
 		where qNum=#{qNum}
 	]]>
 	</select>
+</mapper>

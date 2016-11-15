@@ -46,7 +46,7 @@
 	]]>
 	</delete>
 	
-	<update id="updateMember" parameterType="int">
+	<update id="updateMember" parameterType="Member">
 	<![CDATA[
 		 update shop_Member set mName=#{mName},
 		 mPw=#{mPw},mPhone=#{mPhone},mEmail=#{mEmail},mAddress=#{mAddress}

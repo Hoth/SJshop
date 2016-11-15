@@ -56,16 +56,18 @@ public class MemberDAO {
 
 	}
 	
-	public static void deleteMember(Member member) throws Exception{
+	public static void deleteMember(int mNum) throws Exception{
 		SqlSession sqlSession = sqlMapper.openSession(true);
-		sqlSession.insert("deleteMember",member.mNum);
+		sqlSession.insert("deleteMember",mNum);
 		sqlSession.close();
 	}
 	
-	public static void updateGood(Member member) throws Exception{
+
+	public static void updateMember(Member member) {
 		SqlSession sqlSession = sqlMapper.openSession(true);
-		sqlSession.insert("updateGood",member.mNum);
+		sqlSession.insert("updateMember",member.mNum);
 		sqlSession.close();
+		
 	}
 
 }
