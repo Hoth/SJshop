@@ -41,6 +41,14 @@ public class MemberDAO {
 		return member;
   }
 	
+	public static ArrayList<Member> selectMemberList() throws Exception {
+		SqlSession sqlSession = sqlMapper.openSession(true);
+		ArrayList<Member>memberList = null;
+		memberList = (ArrayList)sqlSession.selectList("selectMemberList");
+		sqlSession.close();
+		return memberList;
+  }
+	
 	public static void insertMember(Member member) throws Exception {
 		SqlSession sqlSession = sqlMapper.openSession(true);
 		sqlSession.insert("insertMember", member);
