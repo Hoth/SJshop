@@ -110,7 +110,7 @@ public class GoodService  {
 		
 		file.transferTo(destFile); 
 		
-		g.img = file.getOriginalFilename();
+		g.gMainImg = file.getOriginalFilename();
 		
 		
 		

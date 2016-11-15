@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		
+<mapper namespace="ShoppingList">	
+
+	<resultMap type="ShoppingList" id="ShoppingListMap">
+	
+		<result column="sNum" property="sNum"/>
+		<result column="mNum" property="mNum"/>
+		<result column="mCount" property="mCount"/>
+		<result column="sDate" property="sDate"/>
+		<result column="gNum" property="gNum"/>
+		<result column="gPrice" property="gPrice"/>
+		<result column="gColor" property="gColor"/>
+	</resultMap>
+
+	<select id="selectShoppingListList" resultMap="ShoppingListMap">
+	 <![CDATA[
+	  	select gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	gImg,gDetail,gCount,gStock from shop_Good
+	 ]]>
+	</select>
+
+	<select id="selectShoppingList" resultMap="ShoppingListMap">
+	<![CDATA[
+		select gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	gImg,gDetail,gCount,gStock from shop_Good
+		where gNum=#{gNum}
+	]]>
+	</select>
+	
+	<insert id="insertGood" parameterType="Good">
+	<![CDATA[
+		insert into shop_Good (gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	gImg,gDetail,gStock)
+		values (#{gNum},#{gName},#{gPrice},#{gMainImage},#{gMainDetail},
+	  	#{gImg},#{gDetail},#{gStock})  
+	]]>
+	</insert>
+	
+</mapper>

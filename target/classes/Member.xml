@@ -7,32 +7,48 @@
 
 	<resultMap type="Good" id="MemberResultMap">
 	
-		<result column="Mnum" property="Mnum"/>
-		<result column="name" property="name"/>
-		<result column="Email" property="Email"/>
-		<result column="phone" property="phone"/>
+		<result column="mNum" property="Mnum"/>
+		<result column="mName" property="mName"/>
+		<result column="mId" property="mId"/>
+		<result column="mPw" property="mPw"/>
+		<result column="mPhone" property="mPhone"/>
+		<result column="mEmail" property="mEmail"/>
+		<result column="mAddress" property="mAddress"/>
+		<result column="mMileage" property="mMileage"/>
+		<result column="mCount" property="mCount"/>
 		
 	</resultMap>
 
 	<select id="selectMemberList" resultMap="MemberResultMap">
 	 <![CDATA[
-	  	select Mnum,name,Email,phone from tb_member
+	  	select mNum,mName,mId,mPw,mPhone,mEmail,mAddress,mMileage,mCount from shop_Member
 	 ]]>
 	</select>
 
 	
 	<select id="selectMember" resultMap="MemberResultMap">
 	<![CDATA[
-		select Mnum,name,Email,phone from tb_member
+		select mNum,mName,mId,mPw,mPhone,mEmail,mAddress,mMileage,mCount from shop_Member
 		where Mnum=#{Mnum}
 	]]>
 	</select>
 	
 	<insert id="insertMember" parameterType="Member">
 	<![CDATA[
-		insert into tb_member (Mnum,name,Email,phone)
-		values (good_seq.nextval,#{name},#{Email},#{phone})  
+		insert into shop_Member (mName,mId,mPw,mPhone,mEmail,mAddress from shop_Member)
+		values (#{mName},#{mId},#{mPw},#{mPhone},#{mEmail},#{mAddress} from shop_Member)  
 	]]>
 	</insert>
 	
+	<delete id="deleteMember" parameterType="int">
+	<![CDATA[
+		delete from shop_Member where mNum=#{mNum}  
+	]]>
+	</delete>
+	
+	<update id="editMember" parameterType="int">
+	<![CDATA[
+		 from shop_Member where mNum=#{mNum}  
+	]]>
+	</update>
 </mapper>

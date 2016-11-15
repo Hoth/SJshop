@@ -7,31 +7,40 @@
 
 	<resultMap type="Good" id="GoodResultMap">
 	
-		<result column="gnum" property="gnum"/>
-		<result column="name" property="name"/>
-		<result column="price" property="price"/>
-		<result column="detail" property="detail"/>
-		<result column="img" property="img"/>
+		<result column="gNum" property="gNum"/>
+		<result column="gName" property="gName"/>
+		<result column="gPrice" property="gPrice"/>
+		<result column="gMainImg" property="gMainImg"/>
+		<result column="gMainDetail" property="gMainDetail"/>
+		<result column="gImg" property="gImg"/>
+		<result column="gDetail" property="gDetail"/>
+		<result column="gCount" property="gCount"/>
+		<result column="gStock" property="gStock"/>
+		
 	</resultMap>
 
 	<select id="selectGoodList" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select gnum,name,price,detail,img from tb_good
+	  	select gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	gImg,gDetail,gCount,gStock from shop_Good
 	 ]]>
 	</select>
 
 	
 	<select id="selectGood" resultMap="GoodResultMap">
 	<![CDATA[
-		select gnum,name,price,detail,img from tb_good
-		where gnum=#{gnum}
+		select gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	gImg,gDetail,gCount,gStock from shop_Good
+		where gNum=#{gNum}
 	]]>
 	</select>
 	
 	<insert id="insertGood" parameterType="Good">
 	<![CDATA[
-		insert into tb_good (name,detail,price,img)
-		values (#{name},#{detail},#{price},#{img})  
+		insert into shop_Good (gNum,gName,gPrice,gMainImage,gMainDetail,
+	  	gImg,gDetail,gStock)
+		values (#{gNum},#{gName},#{gPrice},#{gMainImage},#{gMainDetail},
+	  	#{gImg},#{gDetail},#{gStock})  
 	]]>
 	</insert>
 	

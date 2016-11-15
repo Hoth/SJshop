@@ -6,7 +6,7 @@ public class Good {
 	public String gPrice;//����
 	public String gMainImg;//��ǥ����
 	public String gMainDetail;//��ǥ����
-	public String gImage;//���λ���
+	public String gImg;//���λ���
 	public String gDetail;//���μ���
 	public int gCount;//�Ǹŷ�
 	public int gStock;//���
@@ -42,11 +42,11 @@ public class Good {
 	public void setgMainDetail(String gMainDetail) {
 		this.gMainDetail = gMainDetail;
 	}
-	public String getgImage() {
-		return gImage;
+	public String getgImg() {
+		return gImg;
 	}
-	public void setgImage(String gImage) {
-		this.gImage = gImage;
+	public void setgImg(String gImg) {
+		this.gImg = gImg;
 	}
 	public String getgDetail() {
 		return gDetail;
