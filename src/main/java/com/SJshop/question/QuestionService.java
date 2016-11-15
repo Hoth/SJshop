@@ -1,4 +1,4 @@
-package com.SJshop.Question;
+package com.SJshop.question;
 
 public class QuestionService {
 

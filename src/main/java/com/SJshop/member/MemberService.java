@@ -5,8 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import com.SJshop.Question.Question;
-import com.SJshop.Question.QuestionDAO;
+
+import com.SJshop.question.Question;
+import com.SJshop.question.QuestionDAO;
 
 @Controller
 public class MemberService {

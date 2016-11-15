@@ -1,4 +1,4 @@
-package com.SJshop.Question;
+package com.SJshop.question;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -9,7 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import com.SJshop.Question.Question;
+import com.SJshop.question.Question;
 
 public class QuestionDAO {
 	private  static String resource= "sqlmap-config.xml";

@@ -2,14 +2,15 @@ package com.SJshop.good;
 
 public class Good {
 	public int gNum; //PK
-	public String gName;//��ǰ��
-	public String gPrice;//����
-	public String gMainImg;//��ǥ����
-	public String gMainDetail;//��ǥ����
-	public String gImg;//���λ���
-	public String gDetail;//���μ���
-	public int gCount;//�Ǹŷ�
-	public int gStock;//���
+	public String gName;//상품이름
+	public String gPrice;//가격
+	public String gMainImg;//대표사진
+	public String gMainDetail;//대표내용
+	public String gImg;//글이미지
+	public String gDetail;//글내용
+	public int gCount;//주문량
+	public int gStock;//재고수
+	public int cNum;//카테고리넘버
 	//public String gColor;//����
 	
 	public int getgNum() {
@@ -65,6 +66,12 @@ public class Good {
 	}
 	public void setgStock(int gStock) {
 		this.gStock = gStock;
+	}
+	public int getcNum() {
+		return cNum;
+	}
+	public void setcNum(int cNum) {
+		this.cNum = cNum;
 	}
 	
 }
