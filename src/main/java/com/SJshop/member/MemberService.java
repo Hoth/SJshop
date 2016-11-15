@@ -1,11 +1,11 @@
 package com.SJshop.member;
 
 import java.util.ArrayList;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.SJshop.question.Question;
 import com.SJshop.question.QuestionDAO;
 
@@ -73,7 +73,39 @@ public class MemberService {
 	      mav.setViewName("/member/LoginForm.jsp");
 	      return mav;
 	   }
-	 
+	///////////////////////////////////여기부터 다슬건드림
+	@RequestMapping(value="/loginMember.do")
+	public ModelAndView loginMember(
+			@RequestParam(value="mId")String mId,
+			@RequestParam(value="mPw")String mPw,
+			HttpSession session) throws Exception{
+		ModelAndView mav=new ModelAndView();
+		Member loginMember = MemberDAO.selectMember(mId); 
+		if(loginMember==null){ 
+			mav.addObject("ERROR","존재하지 않는 아이디 입니다");	
+			mav.setViewName("forward:/loginMemberForm.do");
+			return mav;
+		}
+
+		if(!loginMember.mPw.equals(mPw)){
+			mav.addObject("ERROR","비밀번호 오류 입니다");		
+			mav.setViewName("forward:/LoginForm.do");
+			return mav;
+		}
+		session.setAttribute("LOGIN_MEMBER",loginMember);
+		mav.setViewName("forward:/Menu.do");	
+		return mav;
+	}
+	//로그아웃
+	@RequestMapping(value="/logoutMember.do")
+	public ModelAndView logoutMember(HttpSession session) throws Exception{
+		ModelAndView mav=new ModelAndView();
+		session.removeAttribute("LOGIN_MEMBER");
+		mav.setViewName("forward:/index.do");
+		return mav;
+	}
+	
+	
 	
 }
 	

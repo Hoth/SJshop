@@ -37,6 +37,18 @@ public class MemberDAO {
 		sqlSession.close();
 		return member;
   }
+	public static Member selectMember(String mId) throws Exception {
+		
+		Member member= null;
+		SqlSession sqlSession = sqlMapper.openSession(true);	
+		ArrayList<Member>memList =
+				(ArrayList) sqlSession.selectList("selectMember_Id", mId);
+		if(memList!=null&&memList.size()>0){
+		member=memList.get(0);
+		}
+		sqlSession.close();
+		return member;
+  }
 	
 	public static ArrayList<Member> selectMemberList() throws Exception {
 		SqlSession sqlSession = sqlMapper.openSession(true);

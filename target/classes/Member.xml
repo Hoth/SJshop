@@ -33,6 +33,13 @@
 	]]>
 	</select>
 	
+	<select id="selectMember_Id" resultMap="MemberResultMap">
+	<![CDATA[
+		select mNum,mName,mId,mPw,mPhone,mEmail,mAddress,mMileage,mCount from shop_Member
+		where mId=#{mId}
+	]]>
+	</select>	
+	
 	<insert id="insertMember" parameterType="Member">
 	<![CDATA[
 		insert into shop_Member (mName,mId,mPw,mPhone,mEmail,mAddress from shop_Member)
