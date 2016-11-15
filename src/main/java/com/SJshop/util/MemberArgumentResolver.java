@@ -3,42 +3,33 @@ package com.SJshop.util;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebArgumentResolver;
 import org.springframework.web.context.request.NativeWebRequest;
+import com.SJshop.member.*;
 
 
-public class MemberArgumentResolver {
-
-
-
-
-	public class GoodArgumentResolver 
+	public class MemberArgumentResolver 
 	     implements WebArgumentResolver {
 
 		public Object resolveArgument(
 				MethodParameter parameter,
 				NativeWebRequest request) throws Exception {
 			if(Member.class == parameter.getParameterType()){
-				String gNum = request.getParameter("gNum");
-				String gName = request.getParameter("gName");//��ǰ��
-				String gPrice = request.getParameter("gPrice");//����
-				String gMainImg = request.getParameter("gMainImg");//��ǥ����
-				String gMainDetail = request.getParameter("gMainDetail");//��ǥ����
-				String gImg = request.getParameter("gImg");//���λ���
-				String gDetail = request.getParameter("gDetail");//���μ���
-				int gCount = Integer.parseInt(request.getParameter("gCount"));//�Ǹŷ�
-				int gStock = Integer.parseInt(request.getParameter("gStock"));//���
+				int mNum = Integer.parseInt(request.getParameter("mNum"));
+				String mName = request.getParameter("mName");
+				String mId = request.getParameter("mId");
+				String mPw = request.getParameter("mPw");
+				String mAddress = request.getParameter("mAddress");
+				String mMileage = request.getParameter("mMileage");
+				String sCount = request.getParameter("sCount");
+				Member m = new Member();
+				m.setmName(mName);
+				m.setmId(mId);
+				m.setmPw(mPw);
+				m.setmAddress(mAddress);
+				m.setmMileage(mMileage);
+				m.setsCount(sCount);
+			
 				
-				
-				Good g = new Good();
-				g.setgNum(Integer.parseInt(gNum));
-				g.setgName(gName);
-				g.setgPrice(gPrice);
-				g.setgMainImg(gMainImg);
-				g.setgMainDetail(gMainDetail);
-				g.setgImg(gImg);
-				g.setgDetail(gDetail);
-				g.setgCount(gCount);
-				g.setgStock(gStock);
-				return g;
+				return m;
 			
 			
 			}

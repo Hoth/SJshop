@@ -54,6 +54,8 @@
   		<mvc:argument-resolvers>
       <bean
          class="com.SJshop.util.GoodArgumentResolver" />
+         <bean
+         class="com.SJshop.util.MemberArgumentResolver" />
    </mvc:argument-resolvers>
 </mvc:annotation-driven>
 
