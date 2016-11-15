@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Question">	
+	<resultMap type="Question" id="QuestionResultMap">
+		<result column="qNum" property="qNum"/>
+		<result column="qName" property="qName"/>
+	</resultMap>
+	
+	<select id="selectQuestionList" resultMap="QuestionResultMap">
+	 <![CDATA[
+	  	select qNum,qName from shop_Question
+	 ]]>
+	</select>
+
+	<select id="selectQuestion" resultMap="QuestionResultMap">
+	<![CDATA[
+		select qNum,qName from shop_Question
+		where qNum=#{qNum}
+	]]>
+	</select>

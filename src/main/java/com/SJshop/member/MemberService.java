@@ -1,27 +1,61 @@
 package com.SJshop.member;
 
 import java.util.ArrayList;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.SJshop.Question.Question;
+import com.SJshop.Question.QuestionDAO;
+import com.bitacademy.dept.Dept;
+import com.bitacademy.dept.DeptDAO;
+import com.bitacademy.student.Student;
+import com.bitacademy.student.StudentDAO;
+
 @Controller
 public class MemberService {
+	
 	@RequestMapping(value="/viewMemberList.do")
 	public ModelAndView viewMemberListList() throws Exception {
 		ModelAndView mav=new ModelAndView();
-		//1. GoodDAO.selectGoodList()메서드를 호출하고 
-		//리턴된 전체 물건정보를  ArrayList 변수에 저장
-		
-
 		ArrayList<Member> list = MemberDAO.selectMemberList();
-		
-		//2. 1의 객체를 JSP에서 출력할수 있도록 설정
 		mav.addObject("Member_LIST",list);	
-		
-		//3./good/viewGoodList.jsp로 페이지 이동 하도록
-		// mav의 setViewName을 /good/viewGoodList.jsp 으로 설정
 		mav.setViewName("/member/viewMemberList.jsp");
 		return mav;
 	}
+	@RequestMapping(value="/insertMemberForm.do")
+	public ModelAndView addStudentForm()throws Exception {
+		ModelAndView mav=new ModelAndView();
+		ArrayList<Question> qList=QuestionDAO.selectQuestionList();	
+		mav.addObject("QUESTION_LIST", qList);
+		mav.setViewName("/Member/addMemberForm.jsp");
+		return mav;
+	}
+	//학생 추가 
+	
+	@RequestMapping(value="/insertMember.do")
+	public ModelAndView addStudent(Member member)throws Exception {
+		ModelAndView mav=new ModelAndView();
+		MemberDAO.insertMember(member);
+		mav.addObject("mNum",member.mNum);
+		mav.setViewName("forward:/viewMember.do");
+		return mav;
+	}
+	
+	@RequestMapping(value="/editStudentForm.do")
+	public ModelAndView editStudentForm(@RequestParam(value="studno")String studno)throws Exception {
+		ModelAndView mav=new ModelAndView();
+		ArrayList<Dept> studentEdit =DeptDAO.selectDeptList();
+		Student student=StudentDAO.selectStudent(studno)
+		mav.addObject("DEPT_LIST",studentEdit);
+		mav.addObject("STUDENT", student)
+		mav.setViewName("/student/editStudentForm.jsp");
+		return mav;
+		
+	}
+	
+	
 }
+	
+
