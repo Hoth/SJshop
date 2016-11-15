@@ -49,7 +49,7 @@ public class GoodService  {
 	
 	//물건 1개 조회
 	@RequestMapping(value="/viewGood.do")
-	public ModelAndView viewGood(@RequestParam(value="gnum")String gnum) throws Exception {
+	public ModelAndView viewGood(@RequestParam(value="gnum")int gnum) throws Exception {
 		ModelAndView mav=new ModelAndView();
 		// 
 		//2. 조회하고자 하는 물건의 번호 가 매개변수 gnum에 저장되 있으므로 GoodDAO.selectGood(조회하려는 물건 번호 ->gnum)를 호출해서
@@ -77,34 +77,7 @@ public class GoodService  {
 		ModelAndView mav=new ModelAndView();
 		 String uploadPath = "D:/workspace3/www/WebContent/photo";
 		//       /home/hosting_users/feelk22/photo
-//		int size = 10*1024*1024;      
-//		
-//		
-//		String filename="";
-//		
-//		
-//		try{
-//		
-//		MultipartRequest multi = new MultipartRequest(request, uploadPath, size, "euc-kr", new DefaultFileRenamePolicy());
-//		
-//		
-//		
-//		
-//		
-//		
-//		Enumeration files = multi.getFileNames();
-//		
-//		
-//		
-//		String newfile = (String)files.nextElement();
-//		filename = multi.getFilesystemName(newfile);
-//		
-//		
-//		}catch(Exception e){
-//		
-//		e.printStackTrace();
-//		}
-//		
+
 		
 		File destFile=new File(uploadPath+"/"+file.getOriginalFilename());
 		
