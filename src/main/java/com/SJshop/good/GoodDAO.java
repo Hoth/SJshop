@@ -59,6 +59,13 @@ public class GoodDAO {
 			sqlSession.close();
 			return goodList;
 	  }
+		public static ArrayList<Good> selectGoodList(int cNum) throws Exception {
+			SqlSession sqlSession = sqlMapper.openSession(true);
+			ArrayList<Good>goodList = null;
+			goodList = (ArrayList)sqlSession.selectList("selectGoodList_cNum");
+			sqlSession.close();
+			return goodList;
+	  }
 
 		public static void insertGood(Good good) throws Exception {
 			SqlSession sqlSession = sqlMapper.openSession(true);

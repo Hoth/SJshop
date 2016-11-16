@@ -2,7 +2,10 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-		
+
+	<!-- select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum -->
+	  	
 <mapper namespace="Good">
 
 	<resultMap type="Good" id="GoodResultMap">
@@ -20,20 +23,67 @@
 		
 	</resultMap>
 
-	<select id="selectGoodList" resultMap="GoodResultMap">
-	 <![CDATA[
-	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
-	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
-	 ]]>
-	</select>
-
-	
 	<select id="selectGood" resultMap="GoodResultMap">
 	<![CDATA[
 		select gNum,gName,gPrice,gMainImg,gMainDetail,
 	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 		where gNum=#{gNum}
 	]]>
+	</select>
+	
+	<select id="selectGoodList" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	 ]]>
+	</select>
+
+	<select id="selectGoodList_OrderBy_Price_ASC" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	order by gPrice asc
+	 ]]>
+	</select>
+	
+	<select id="selectGoodList_OrderBy_Price_DESC" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	order by gPrice desc
+	 ]]>
+	</select>
+	
+	<select id="selectGoodList_OrderBy_gCount_ASC" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	order by gCount asc
+	 ]]>
+	</select>
+	
+	<select id="selectGoodList_cNum" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	where cNum=#{cNum}
+	 ]]>
+	</select>
+	
+	<select id="selectGoodList_cNum_OrderBy_Price_DESC" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	where cNum=#{cNum} order by gPrice desc
+	 ]]>
+	</select>
+	
+	<select id="selectGoodList_cNum_OrderBy_Price_DESC" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	where cNum=#{cNum} order by gPrice desc
+	 ]]>
+	</select>
+	
+	<select id="selectGoodList_cNum_OrderBy_gCount_ASC" resultMap="GoodResultMap">
+	 <![CDATA[
+	  	select * from shop_Good
+	  	where cNum=#{cNum} order by gCount asc
+	 ]]>
 	</select>
 	
 	<insert id="insertGood" parameterType="Good">

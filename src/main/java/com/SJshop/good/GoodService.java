@@ -20,17 +20,17 @@ public class GoodService  {
 	@RequestMapping(value="/viewGoodList.do")
 	public ModelAndView viewGoodList() throws Exception {
 		ModelAndView mav=new ModelAndView();
-		//1. GoodDAO.selectGoodList()메서드를 호출하고 
-		//리턴된 전체 물건정보를  ArrayList 변수에 저장
-		
-
-		ArrayList<Good> list = GoodDAO.selectGoodList();
-		
-		//2. 1의 객체를 JSP에서 출력할수 있도록 설정
-		mav.addObject("GOOD_LIST",list);	
-		
-		//3./good/viewGoodList.jsp로 페이지 이동 하도록
-		// mav의 setViewName을 /good/viewGoodList.jsp 으로 설정
+		ArrayList<Good> gList = GoodDAO.selectGoodList();
+		mav.addObject("GOOD_LIST",gList);	
+		mav.setViewName("/good/viewGoodList.jsp");
+		return mav;
+	}
+	
+	@RequestMapping(value="/viewGoodList_cNum.do")
+	public ModelAndView viewGoodList(@RequestParam(value="cNum")int cNum) throws Exception {
+		ModelAndView mav=new ModelAndView();
+		ArrayList<Good> gList = GoodDAO.selectGoodList(cNum);
+		mav.addObject("GOOD_LIST",gList);	
 		mav.setViewName("/good/viewGoodList.jsp");
 		return mav;
 	}
@@ -39,17 +39,8 @@ public class GoodService  {
 	@RequestMapping(value="/viewGood.do")
 	public ModelAndView viewGood(@RequestParam(value="gnum")int gnum) throws Exception {
 		ModelAndView mav=new ModelAndView();
-		// 
-		//2. 조회하고자 하는 물건의 번호 가 매개변수 gnum에 저장되 있으므로 GoodDAO.selectGood(조회하려는 물건 번호 ->gnum)를 호출해서
-		//조회하고자 하는 물건정보를 Good 타입 변수에 저장
-		
 		Good good = GoodDAO.selectGood(gnum);
 		mav.addObject("GOOD",good);
-		//2. 2의 객체를 JSP에서 출력할수 있도록 설정
-		//  mav.addObject("JSP에서 사용할 이름:GOOD",2의 객체);
-	
-		//3./good/viewGood.jsp로 페이지 이동 하도록 
-		// mav의 setViewName을 /good/viewGood.jsp 으로 설정
 		mav.setViewName("/good/viewGood.jsp");
 		return mav;
 	}
