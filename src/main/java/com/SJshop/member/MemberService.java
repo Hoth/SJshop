@@ -52,9 +52,6 @@ public class MemberService {
 			mav.setViewName("forward:/insertMemberForm.do");
 			return mav;
 		}
-		
-		
-		
 		MemberDAO.insertMember(member);
 		mav.addObject("mNum",member.mNum);
 		mav.setViewName("/index.jsp");
