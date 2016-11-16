@@ -6,11 +6,28 @@ public class Member {
 	public String mId;
 	public String mPw;
 	public String mPw2;
+	public String qNum;
+	public String mAnswer;
 	public String mPhone;
 	public String mEmail;
 	public String mAddress;
 	public String mMileage;
 	public String mCount; //구매내역 보기 위한 구매횟수
+	
+	
+	public String getmAnswer() {
+		return mAnswer;
+	}
+	public void setmAnswer(String mAnswer) {
+		this.mAnswer = mAnswer;
+	}
+	
+	public String getqNum() {
+		return qNum;
+	}
+	public void setqNum(String qNum) {
+		this.qNum = qNum;
+	}
 	
 	public String getmEmail() {
 		return mEmail;
