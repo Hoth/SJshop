@@ -1,28 +1,16 @@
 package com.SJshop.good;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
-import org.apache.catalina.connector.Request;
-import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import com.SJshop.category.Category;
+import com.SJshop.category.CategoryDAO;
 
 @Controller
 public class GoodService  {
@@ -65,15 +53,16 @@ public class GoodService  {
 		mav.setViewName("/good/viewGood.jsp");
 		return mav;
 	}
-	@RequestMapping(value="/InsertGood.do")
-	public ModelAndView InsertGood() throws Exception {
+	@RequestMapping(value="/insertGoodForm.do")
+	public ModelAndView insertGoodForm() throws Exception {
 		ModelAndView mav=new ModelAndView();
-		
-		mav.setViewName("/good/InsertGood.jsp");
+		ArrayList<Category> cList=CategoryDAO.selectCategoryList();
+		mav.addObject("CATEGORY_LIST", cList);
+		mav.setViewName("/good/insertGoodForm.jsp");
 		return mav;
 	}
-	@RequestMapping(value="/AddGood.do")
-	public ModelAndView AddGood(Good g,@RequestParam(value="file") MultipartFile file) throws Exception {
+	@RequestMapping(value="/insertGood.do")
+	public ModelAndView insertGood(Good g,@RequestParam(value="file") MultipartFile file) throws Exception {
 		ModelAndView mav=new ModelAndView();
 		 String uploadPath = "C:/Users/bit-user/git/SJshop/WebContent/photo";
 		//       /home/hosting_users/feelk22/photo
