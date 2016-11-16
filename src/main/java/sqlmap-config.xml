@@ -15,6 +15,7 @@
      <typeAlias alias="Member" type="com.SJshop.member.Member"/>
      <typeAlias alias="ShoppingList" type="com.SJshop.shoppingList.ShoppingList"/>
      <typeAlias alias="Question" type="com.SJshop.question.Question"/>
+     <typeAlias alias="Category" type="com.SJshop.category.Category"/>
 </typeAliases>
 <!-- 환경설정:
       developement->개발중,XML 내용바꾸면 바로 바뀐내용적용
@@ -43,5 +44,6 @@
 	<mapper resource="Member.xml" />
 	<mapper resource="ShoppingList.xml"/>
 	<mapper resource="Question.xml"/>
+	<mapper resource="Category.xml"/>
 </mappers>
 </configuration>
