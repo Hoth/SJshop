@@ -92,7 +92,7 @@ public class MemberService {
 	@RequestMapping(value="/LoginForm.do")
 	   public ModelAndView LoginForm() throws Exception {
 	      ModelAndView mav=new ModelAndView();
-	      mav.setViewName("/member/LoginForm.jsp");
+	      mav.setViewName("/member/loginForm.jsp");
 	      return mav;
 	   }
 	///////////////////////////////////여기부터 다슬건드림

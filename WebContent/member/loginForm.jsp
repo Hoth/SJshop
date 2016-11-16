@@ -13,7 +13,7 @@ PW<input type="text"><p>
 <p>
 <a>id찾기</a><p>
 <a>pw찾기</a><p>
-<a href = "/www/InsertMemberForm.do">회원가입</a><p>
+<a href = "/www/insertMemberForm.do">회원가입</a><p>
 </form>
 
 </body>
