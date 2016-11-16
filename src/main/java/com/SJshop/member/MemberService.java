@@ -35,7 +35,7 @@ public class MemberService {
 		ModelAndView mav=new ModelAndView();
 		MemberDAO.insertMember(member);
 		mav.addObject("mNum",member.mNum);
-		mav.setViewName("forward:/viewMember.do");
+		mav.setViewName("/index.jsp");
 		return mav;
 	}
 	

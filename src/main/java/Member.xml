@@ -11,6 +11,8 @@
 		<result column="mName" property="mName"/>
 		<result column="mId" property="mId"/>
 		<result column="mPw" property="mPw"/>
+		<result column="qNum" property="qNum"/>
+		<result column="mAnswer" property="mAnswer"/>
 		<result column="mPhone" property="mPhone"/>
 		<result column="mEmail" property="mEmail"/>
 		<result column="mAddress" property="mAddress"/>
@@ -42,8 +44,8 @@
 	
 	<insert id="insertMember" parameterType="Member">
 	<![CDATA[
-		insert into shop_Member (mName,mId,mPw,mPhone,mEmail,mAddress from shop_Member)
-		values (#{mName},#{mId},#{mPw},#{mPhone},#{mEmail},#{mAddress} from shop_Member)  
+		insert into shop_Member (mName,mId,mPw,qNum,mAnswer,mPhone,mEmail,mAddress )
+		values (#{mName},#{mId},#{mPw},#{qNum},#{mAnswer},#{mPhone},#{mEmail},#{mAddress}) 
 	]]>
 	</insert>
 	
