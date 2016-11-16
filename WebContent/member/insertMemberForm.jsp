@@ -19,15 +19,15 @@ function getSelectValue(frm)
 </script>
 
 <script>
-function check() {
+function check(event) {
   if(IM.mId.value == "") {
     alert("아이디를 입력하세요");
-    IM.mID.focus();
+    event.preventDefault();
     return false;
   }
   else if(IM.mPw.value == "") {
-    alert("비번을 입역하세요");
-    IM.mPw.focus();
+    alert("비번을 입력하세요");
+    event.preventDefault();
     return false;
   }
   else return true;
@@ -37,7 +37,7 @@ function check() {
 
    </head>  
     <body>  
-   	<form action="/www/insertMember.do" name="IM"  method="post" onsubmit="return check()">  
+   	<form action="/www/insertMember.do" name="IM"  method="post" onsubmit="return check(event)">  
       
     	<table>  
     	<tr><td>이름</td><td><input type="text" name="mName"/></td></tr>  
