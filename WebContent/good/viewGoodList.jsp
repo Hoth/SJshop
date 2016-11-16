@@ -34,33 +34,24 @@ response.setHeader("cache-control","no-cache");
 	<div data-role="footer" data-position="fixed" data-theme="a">
 	
 	<div data-role="navbar">
+		<p/><p/>
 		<ul>
+		<c:if test="${sessionScope.LOGIN_CUSTOMER==null}">
 		<li>
-				<a href="addCustomerForm.do" data-icon="plus" rel="external">
-				회원가입
-				</a>
-			</li>
-			<li>
-			
-				<c:if test="${sessionScope.LOGIN_CUSTOMER==null}">
-				
-				<a href="loginCustomerForm.do" data-icon="gear" rel="external">
-				로그인
-				</a>
-				</c:if>
-				
-				<c:if test="${sessionScope.LOGIN_CUSTOMER!=null}">
-				<a href="logoutCustomer.do" data-icon="gear" rel="external">
-				로그아웃
-				</a>
-				</c:if>
-			 	
-			</li>
-			<li>
-				<a href="viewCartList.do" data-icon="plus" rel="external">
-				장바구니 조회
-				</a>
-			</li>
+			<a href="addCustomerForm.do" data-icon="plus" rel="external">회원가입</a>
+		</li>
+		<li>	
+			<a href="loginCustomerForm.do" data-icon="gear" rel="external">로그인</a>
+		</li>
+		</c:if>
+		<c:if test="${sessionScope.LOGIN_CUSTOMER!=null}">
+		<li>
+		<a href="logoutCustomer.do" data-icon="gear" rel="external">로그아웃</a>
+		<li>
+		</c:if>
+		<li>
+		<a href="viewCartList.do" data-icon="plus" rel="external">장바구니 조회</a>
+		</li>
 		</ul>		
 	</div>
 	</div>

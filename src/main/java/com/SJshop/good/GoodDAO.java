@@ -20,16 +20,14 @@ public class GoodDAO {
 	private static Reader sqlReader=null;
 	static{
 		try {
-			sqlReader=Resources.getResourceAsReader(
-								resource);
+			sqlReader=Resources.getResourceAsReader(resource);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}				
 	private static SqlSessionFactory sqlMapper =
-			new SqlSessionFactoryBuilder().build(
-					sqlReader);
+			new SqlSessionFactoryBuilder().build(sqlReader);
 
 	/*
 		 * 번호가이 일치하는 물건정보를 DB에서 조회
@@ -60,9 +58,11 @@ public class GoodDAO {
 			return goodList;
 	  }
 		public static ArrayList<Good> selectGoodList(int cNum) throws Exception {
+			System.out.println("여기여기여기여기"+cNum);
 			SqlSession sqlSession = sqlMapper.openSession(true);
+			System.out.println("두번째ㅐㅐㅐㅐㅐㅐㅐㅐㅐㅐㅐcNummm====="+cNum);
 			ArrayList<Good>goodList = null;
-			goodList = (ArrayList)sqlSession.selectList("selectGoodList_cNum");
+			goodList = (ArrayList)sqlSession.selectList("selectGoodList_cNum",cNum);
 			sqlSession.close();
 			return goodList;
 	  }

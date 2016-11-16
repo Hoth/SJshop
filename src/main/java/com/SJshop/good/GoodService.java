@@ -28,7 +28,9 @@ public class GoodService  {
 	
 	@RequestMapping(value="/viewGoodList_cNum.do")
 	public ModelAndView viewGoodList(@RequestParam(value="cNum")int cNum) throws Exception {
+		System.out.println("CNUM=============="+cNum);
 		ModelAndView mav=new ModelAndView();
+		System.out.println("여기는?");
 		ArrayList<Good> gList = GoodDAO.selectGoodList(cNum);
 		mav.addObject("GOOD_LIST",gList);	
 		mav.setViewName("/good/viewGoodList.jsp");
@@ -64,11 +66,7 @@ public class GoodService  {
 		file.transferTo(destFile); 
 		
 		g.gMainImg = file.getOriginalFilename();
-		
-		
-		
-		
-		
+	
 		GoodDAO.insertGood(g);
 		mav.setViewName("/good/viewGoodList.jsp");
 		return mav;

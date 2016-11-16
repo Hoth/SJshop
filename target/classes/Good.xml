@@ -39,49 +39,56 @@
 
 	<select id="selectGoodList_OrderBy_Price_ASC" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 	  	order by gPrice asc
 	 ]]>
 	</select>
 	
 	<select id="selectGoodList_OrderBy_Price_DESC" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 	  	order by gPrice desc
 	 ]]>
 	</select>
 	
 	<select id="selectGoodList_OrderBy_gCount_ASC" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 	  	order by gCount asc
 	 ]]>
 	</select>
 	
 	<select id="selectGoodList_cNum" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 	  	where cNum=#{cNum}
 	 ]]>
 	</select>
 	
-	<select id="selectGoodList_cNum_OrderBy_Price_DESC" resultMap="GoodResultMap">
+	<select id="selectGoodList_cNum_OrderBy_Price_ASC" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
-	  	where cNum=#{cNum} order by gPrice desc
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
+	  	where cNum=#{cNum} order by gPrice aesc
 	 ]]>
 	</select>
 	
 	<select id="selectGoodList_cNum_OrderBy_Price_DESC" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 	  	where cNum=#{cNum} order by gPrice desc
 	 ]]>
 	</select>
 	
 	<select id="selectGoodList_cNum_OrderBy_gCount_ASC" resultMap="GoodResultMap">
 	 <![CDATA[
-	  	select * from shop_Good
+	  	select gNum,gName,gPrice,gMainImg,gMainDetail,
+	  	gImg,gDetail,gCount,gStock,cNum from shop_Good
 	  	where cNum=#{cNum} order by gCount asc
 	 ]]>
 	</select>

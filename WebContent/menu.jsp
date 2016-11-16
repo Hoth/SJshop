@@ -13,16 +13,16 @@
 			   	  <a href="/www/InsertGood.do" target="main">µî·Ï</a>
 			   	</li>
 			   <li>
-			   	  <a href="viewGoodList.do?cNum=${1}" target="main">TOP</a>
+			   	  <a href="viewGoodList_cNum.do?cNum=${1}" target="main">TOP</a>
 			   	</li> 
 			   	<li>
-			   	  <a href="viewGoodList.do?cNum=${2}" target="main">OUTER</a>
+			   	  <a href="viewGoodList_cNum.do?cNum=${2}" target="main">OUTER</a>
 			   	</li>
 			   	<li>
-			   	  <a href="viewGoodList.do?cNum=${3}" target="main">BUTTOM</a>
+			   	  <a href="viewGoodList_cNum.do?cNum=${3}" target="main">BUTTOM</a>
 			   	</li>
 			   	<li>
-			   	  <a href="viewGoodList.do?cNum=${4}" target="main">ACC</a>
+			   	  <a href="viewGoodList_cNum.do?cNum=${4}" target="main">ACC</a>
 			   	</li> 	 
 		</ul>
   
