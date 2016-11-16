@@ -33,6 +33,28 @@ public class MemberService {
 	@RequestMapping(value="/insertMember.do")
 	public ModelAndView insertMember(Member member)throws Exception {
 		ModelAndView mav=new ModelAndView();
+		
+		Member check=null;
+		check=MemberDAO.selectMember(member.mId);
+		if(check!=null){
+			mav.addObject("ERROR","ID가 이미 존재합니다.");
+			mav.setViewName("forward:/insertMemberForm.do");
+			return mav;
+		}
+		System.out.println(member.mPw+"\n");
+		System.out.println(member.mPw2);
+		if(!member.mPw.equals(member.mPw2)){
+			mav.addObject("ERROR", "비밀번호가 다릅니다.");
+			mav.setViewName("forward:/insertMemberForm.do");
+			return mav;
+		}if(!member.mEmail.contains("@")){
+			mav.addObject("ERROR", "잘못된 이메일 형식입니다.");
+			mav.setViewName("forward:/insertMemberForm.do");
+			return mav;
+		}
+		
+		
+		
 		MemberDAO.insertMember(member);
 		mav.addObject("mNum",member.mNum);
 		mav.setViewName("/index.jsp");

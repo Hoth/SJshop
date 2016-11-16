@@ -11,6 +11,7 @@
 		<result column="mName" property="mName"/>
 		<result column="mId" property="mId"/>
 		<result column="mPw" property="mPw"/>
+		<result column="mPw2" property="mPw2"/>
 		<result column="qNum" property="qNum"/>
 		<result column="mAnswer" property="mAnswer"/>
 		<result column="mPhone" property="mPhone"/>
